@@ -1,0 +1,132 @@
+.contact-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1rem;
+  background-color: #0f172a;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.contact-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+  background: linear-gradient(to right, #3b82f6, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  color: white;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.submit-button {
+  width: 100%;
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    width: 90%;
+  }
+
+  .contact-heading {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-heading {
+    font-size: 1.5rem;
+  }
+
+  .submit-button {
+    font-size: 0.9rem;
+  }
+}
+
+/* Social Icons */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.social-icon {
+  font-size: 32px;
+  color: #333;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon-link:hover .social-icon {
+  transform: scale(1.15);
+  color: #007bff;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .contact-heading {
+    font-size: 1.8rem;
+  }
+
+  .input,
+  .textarea {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .submit-button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .social-icon {
+    font-size: 28px;
+  }
+}
