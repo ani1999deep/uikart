@@ -50,12 +50,14 @@ export const About = () => {
   return (
     <section id="about" className="about-section" ref={sectionRef}>
       <Starfield />
+
+      {/* Lottie Background */}
+      <div className="lottie-background">
+        <Lottie animationData={aboutAnimation} loop={true} />
+      </div>
+
       <div className="about-container fade-in">
         <h2 className="about-title">About UI Kart</h2>
-
-        <div className="lottie-wrapper fade-in zoom-on-scroll">
-          <Lottie animationData={aboutAnimation} loop={true} />
-        </div>
 
         <Tilt
           tiltMaxAngleX={10}
@@ -127,9 +129,10 @@ export const About = () => {
                 workshop producing handcrafted leather bags in Kolkata.
               </li>
               <li>
-                By 2024, we expanded into **pan-India retail**, launched our
-                **e-commerce store**, and began working with **corporate gifting
-                clients**.
+                By 2024, we expanded into <strong>pan-India retail</strong>,
+                launched our
+                <strong> e-commerce store</strong>, and began working with{" "}
+                <strong>corporate gifting clients</strong>.
               </li>
               <li>
                 Today, we serve both individual customers and bulk wholesale

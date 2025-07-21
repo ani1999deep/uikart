@@ -1,5 +1,4 @@
 import "../../css/Projects.css";
-import { RevealOnScroll } from "../RevealOnScroll";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -78,7 +77,7 @@ export const Projects = () => {
 
   return (
     <section id="projects" className="projects-section" ref={sectionRef}>
-      {/* Background Lottie Animation */}
+      {/* Lottie Background */}
       <div className="lottie-bg">
         <Lottie animationData={codingAnimation} loop={true} />
       </div>
