@@ -4,7 +4,28 @@
   height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   color: white;
+}
+
+/* === Background Layers === */
+.background-layers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.lottie-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.15;
+  pointer-events: none;
 }
 
 #stars-canvas {
@@ -17,6 +38,7 @@
   pointer-events: none;
 }
 
+/* === Overlay === */
 .home-overlay {
   position: absolute;
   top: 0;
@@ -24,59 +46,47 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom right, #774e2e, #9e8b7d);
+  opacity: 0.75;
   z-index: 1;
+  mix-blend-mode: overlay;
 }
 
+/* === Foreground Content === */
 .home-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
+  position: relative;
+  z-index: 3;
   padding: 2rem;
   width: 100%;
   max-width: 1200px;
-  margin: auto;
-  flex-wrap: wrap;
-  position: relative;
-}
-
-.home-right {
-  flex: 1 1 100%;
-  padding: 1rem;
   text-align: center;
 }
 
-/* === Glow on Hover for Title === */
 .home-title {
   font-size: 2.5rem;
   font-weight: bold;
-  text-align: center;
   margin-bottom: 1rem;
-  background: linear-gradient(to right, #c084fc, #facc15);
+  background: linear-gradient(to right, #facc15, #eab308);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: text-shadow 0.4s ease;
 }
 
 .home-title:hover {
-  text-shadow: 0 0 10px #c084fc, 0 0 20px #facc15, 0 0 30px #facc15;
+  text-shadow: 0 0 10px #facc15, 0 0 20px #eab308, 0 0 30px #eab308;
 }
 
-/* === Optional: Glow on Hover for Description === */
 .home-description {
   font-size: 1.1rem;
   color: #fef3c7;
   margin-bottom: 2rem;
   line-height: 1.6;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   transition: text-shadow 0.4s ease;
 }
 
 .home-description:hover {
-  text-shadow: 0 0 10px rgba(250, 204, 21, 0.4),
-    0 0 20px rgba(250, 204, 21, 0.2);
+  text-shadow: 0 0 10px rgba(250, 204, 21, 0.3), 0 0 20px rgba(234, 179, 8, 0.2);
 }
 
 .home-buttons {
@@ -84,49 +94,45 @@
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-top: 1.5rem;
   z-index: 3;
 }
 
+/* === Buttons === */
 .btn {
   padding: 0.75rem 1.5rem;
   font-weight: bold;
   border-radius: 8px;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
   text-decoration: none;
   display: inline-block;
+  font-size: 1rem;
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
 }
 
 .btn-primary {
-  background-color: #3b82f6;
-  color: white;
+  background-color: #facc15;
+  /* color: #000; */
+  box-shadow: 0 0 10px #facc15aa;
 }
 
 .btn-primary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px #3b82f6aa;
+  transform: scale(1.07);
+  box-shadow: 0 0 15px #facc15, 0 0 30px #facc15aa;
 }
 
 .btn-secondary {
-  border: 1px solid #3b82f6;
-  color: #3b82f6;
+  border: 2px solid #facc15;
+  color: #facc15;
   background-color: transparent;
+  box-shadow: 0 0 8px #facc1566;
 }
 
 .btn-secondary:hover {
-  background: linear-gradient(to bottom right, #774e2e, #9e8b7d);
-  transform: scale(1.05);
-}
-
-/* === Lottie Background Layer === */
-.lottie-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  mix-blend-mode: screen;
-  opacity: 0.35;
-  background: linear-gradient(to bottom right, #774e2e, #9e8b7d);
+  background-color: #facc15;
+  color: #000;
+  transform: scale(1.07);
+  box-shadow: 0 0 15px #facc15aa, 0 0 30px #facc15;
 }

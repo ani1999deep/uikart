@@ -42,9 +42,13 @@
 .app-container {
   min-height: 100vh;
   transition: opacity 0.7s ease-in-out;
-  background-color: black;
+  background: linear-gradient(
+    to bottom right,
+    #3e2a1e,
+    #64554c
+  ); /* Darker tones of your home-section */
   color: #f3f4f6; /* Tailwind's text-gray-100 */
-  padding: 20px; /* Adds some spacing around content */
+  padding: 20px;
 }
 
 /* Hide content before loading */

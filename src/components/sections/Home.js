@@ -13,7 +13,7 @@ export const Home = () => {
   const contentRef = useRef(null);
   const lottieRef = useRef(null);
 
-  // GSAP Scroll Animation
+  // Scroll animation
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
@@ -43,26 +43,33 @@ export const Home = () => {
     return () => ctx.revert();
   }, []);
 
-  // Lottie Background Animation
+  // Lottie background animation
   useEffect(() => {
-    const anim = lottie.loadAnimation({
-      container: lottieRef.current,
-      animationData: leatherShowcase,
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-    });
+    if (lottieRef.current) {
+      const anim = lottie.loadAnimation({
+        container: lottieRef.current,
+        animationData: leatherShowcase,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+      });
 
-    return () => anim.destroy();
+      return () => anim.destroy();
+    }
   }, []);
 
   return (
     <section id="home" className="home-section" ref={sectionRef}>
-      <div className="lottie-background" ref={lottieRef} />
-      <canvas id="stars-canvas" />
+      {/* JSON Background Animation */}
+      <div className="lottie-background" ref={lottieRef}></div>
 
+      {/* Stars Background Canvas */}
+      <canvas id="stars-canvas"></canvas>
+
+      {/* Overlay Gradient */}
       <div className="home-overlay"></div>
 
+      {/* Content */}
       <div className="home-container" ref={contentRef}>
         <div className="home-right">
           <h1 className="home-title">Welcome to UI Kart</h1>
@@ -74,24 +81,16 @@ export const Home = () => {
             collection and experience luxury that lasts.
           </p>
           <div className="home-buttons">
-            <div className="tilt-wrapper">
-              <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10}>
-                <div>
-                  <a href="#products" className="btn btn-primary">
-                    Explore Products
-                  </a>
-                </div>
-              </Tilt>
-            </div>
-            <div className="tilt-wrapper">
-              <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10}>
-                <div>
-                  <a href="#contact" className="btn btn-secondary">
-                    Contact Us
-                  </a>
-                </div>
-              </Tilt>
-            </div>
+            <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10}>
+              <a href="#products" className="btn btn-primary glow">
+                Explore Products
+              </a>
+            </Tilt>
+            <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10}>
+              <a href="#contact" className="btn btn-secondary glow">
+                Contact Us
+              </a>
+            </Tilt>
           </div>
         </div>
       </div>
