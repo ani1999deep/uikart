@@ -4,11 +4,29 @@
   align-items: center;
   justify-content: center;
   padding: 5rem 1rem;
-  background-color: #0f172a;
+  background: linear-gradient(to bottom right, #774e2e, #9e8b7d);
   position: relative;
   overflow: hidden;
 }
 
+/* === Lottie Background === */
+.contact-lottie-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.35;
+  pointer-events: none;
+}
+.contact-lottie-bg canvas {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+/* === Animated Background Grid === */
 .background-animation {
   position: absolute;
   width: 100%;
@@ -39,7 +57,7 @@
   padding: 1.5rem;
   box-sizing: border-box;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .contact-heading {
@@ -47,9 +65,20 @@
   font-weight: bold;
   margin-bottom: 2rem;
   text-align: center;
-  background: linear-gradient(to right, #3b82f6, #22d3ee);
+  background: linear-gradient(to right, #c084fc, #facc15);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 12px rgba(250, 204, 21, 0.6);
+  animation: glowTitle 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowTitle {
+  0% {
+    text-shadow: 0 0 8px #c084fc;
+  }
+  100% {
+    text-shadow: 0 0 16px #facc15;
+  }
 }
 
 .contact-form {
@@ -76,17 +105,17 @@
 
 .input:focus,
 .textarea:focus {
-  border-color: #3b82f6;
-  background: rgba(59, 130, 246, 0.05);
+  border-color: #facc15;
+  background: rgba(250, 204, 21, 0.08);
 }
 
 .submit-button {
   width: 100%;
-  background-color: #3b82f6;
-  color: white;
+  background-color: #facc15;
+  color: #1e1b4b;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
@@ -94,10 +123,10 @@
 
 .submit-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 15px rgba(250, 204, 21, 0.6);
 }
 
-/* 🌟 Social Icons */
+/* === Social Icons === */
 .social-links {
   display: flex;
   justify-content: center;
@@ -107,18 +136,18 @@
 
 .social-icon {
   font-size: 32px;
-  color: rgba(255, 255, 255, 0.3); /* transparent effect */
+  color: rgba(255, 255, 255, 0.3);
   transition: transform 0.4s ease, color 0.4s ease, text-shadow 0.4s ease;
   cursor: pointer;
 }
 
 .social-icon-link:hover .social-icon {
   transform: scale(1.2);
-  color: #22d3ee;
-  text-shadow: 0 0 8px #22d3ee, 0 0 12px #22d3ee;
+  color: #facc15;
+  text-shadow: 0 0 8px #facc15, 0 0 12px #facc15;
 }
 
-/* Responsive Design */
+/* === Responsive === */
 @media (max-width: 768px) {
   .contact-container {
     width: 90%;
@@ -141,16 +170,4 @@
   .social-icon {
     font-size: 28px;
   }
-}
-
-/* 🌌 Lottie Background */
-.contact-lottie-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  opacity: 0.15;
-  pointer-events: none;
 }

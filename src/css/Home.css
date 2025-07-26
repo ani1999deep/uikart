@@ -23,7 +23,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(15, 23, 42, 0.6); /* Dark overlay for readability */
+  background: linear-gradient(to bottom right, #774e2e, #9e8b7d);
   z-index: 1;
 }
 
@@ -46,22 +46,37 @@
   text-align: center;
 }
 
+/* === Glow on Hover for Title === */
 .home-title {
   font-size: 2.5rem;
-  background: linear-gradient(to right, #3b82f6, #22d3ee);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #c084fc, #facc15);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 1rem;
+  transition: text-shadow 0.4s ease;
 }
 
+.home-title:hover {
+  text-shadow: 0 0 10px #c084fc, 0 0 20px #facc15, 0 0 30px #facc15;
+}
+
+/* === Optional: Glow on Hover for Description === */
 .home-description {
   font-size: 1.1rem;
-  color: #cbd5e1;
+  color: #fef3c7;
   margin-bottom: 2rem;
   line-height: 1.6;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  transition: text-shadow 0.4s ease;
+}
+
+.home-description:hover {
+  text-shadow: 0 0 10px rgba(250, 204, 21, 0.4),
+    0 0 20px rgba(250, 204, 21, 0.2);
 }
 
 .home-buttons {
@@ -98,9 +113,11 @@
 }
 
 .btn-secondary:hover {
-  background-color: rgba(59, 130, 246, 0.1);
+  background: linear-gradient(to bottom right, #774e2e, #9e8b7d);
   transform: scale(1.05);
 }
+
+/* === Lottie Background Layer === */
 .lottie-background {
   position: absolute;
   top: 0;
@@ -109,5 +126,7 @@
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  opacity: 10; /* Adjust for visibility */
+  mix-blend-mode: screen;
+  opacity: 0.35;
+  background: linear-gradient(to bottom right, #774e2e, #9e8b7d);
 }

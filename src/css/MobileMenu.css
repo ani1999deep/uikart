@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 0;
-  background: rgba(10, 10, 10, 0.8);
+  background: linear-gradient(to bottom right, #774e2e, #9e8b7d);
   z-index: 40;
   display: flex;
   flex-direction: column;
@@ -14,6 +14,7 @@
   transition: all 0.3s ease-in-out;
   opacity: 0;
   pointer-events: none;
+  overflow: hidden;
 }
 
 /* When Menu is Open */
@@ -33,6 +34,7 @@
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 1;
 }
 
 /* Menu Links */
@@ -41,6 +43,7 @@
   flex-direction: column;
   gap: 20px;
   text-align: center;
+  z-index: 1;
 }
 
 .menu-links a {
@@ -50,13 +53,19 @@
   text-decoration: none;
   opacity: 0;
   transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
 }
 
 /* Animate Links when Menu Opens */
 .mobile-menu.open .menu-links a {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Glowing Hover Effect */
+.menu-links a:hover {
+  text-shadow: 0 0 6px #facc15, 0 0 12px #facc15, 0 0 18px #facc15;
+  transition: text-shadow 0.3s ease-in-out;
 }
 
 /* Responsive Design */

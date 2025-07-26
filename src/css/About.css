@@ -6,7 +6,11 @@
   align-items: center;
   justify-content: center;
   padding: 5rem 0;
-  background: #0d0d0d;
+  background: linear-gradient(
+    to bottom right,
+    #774e2e,
+    #9e8b7d
+  ); /* Updated background */
   perspective: 1000px;
   overflow: hidden;
 }
@@ -20,6 +24,25 @@
   height: 100%;
 }
 
+.lottie-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: screen;
+  background: linear-gradient(to bottom right, #774e2e, #9e8b7d);
+}
+
+.lottie-background canvas {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
 .about-container {
   max-width: 768px;
   margin: 0 auto;
@@ -28,44 +51,53 @@
   z-index: 2;
 }
 
+/* === Animated Glowing Title === */
 .about-title {
-  font-size: 1.875rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
   margin-bottom: 2rem;
-  background: linear-gradient(to right, #3b82f6, #22d3ee);
+  background: linear-gradient(to right, #c084fc, #facc15);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-align: center;
-  transition: all 0.3s ease-in-out;
+  text-shadow: 0 0 12px rgba(250, 204, 21, 0.6);
+  animation: glowTitle 2s ease-in-out infinite alternate;
 }
 
-.about-title:hover {
-  text-shadow: 0 0 5px #22d3ee, 0 0 10px #22d3ee, 0 0 15px #22d3ee;
+@keyframes glowTitle {
+  0% {
+    text-shadow: 0 0 8px #c084fc;
+  }
+  100% {
+    text-shadow: 0 0 16px #facc15;
+  }
+}
+
+.about-description {
+  color: #fef3c7;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.15);
 }
 
 .about-card,
 .info-card,
 .skills-section {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px rgba(234, 179, 8, 0.2);
   padding: 2rem;
   border-radius: 1rem;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease;
 }
 
 .about-card:hover,
 .info-card:hover,
 .skills-section:hover {
-  transform: translateY(-0.25rem) scale(1.02);
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), 0 0 40px rgba(0, 229, 255, 0.2);
-  border: 1px solid rgba(0, 229, 255, 0.6);
-}
-
-.about-description {
-  color: #d1d5db;
-  margin-bottom: 1.5rem;
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 0 25px rgba(250, 204, 21, 0.6), 0 0 50px rgba(234, 179, 8, 0.3);
+  border-color: rgba(250, 204, 21, 0.6);
 }
 
 .skills-grid {
@@ -85,13 +117,15 @@
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  background: linear-gradient(to right, #facc15, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   transition: all 0.3s ease-in-out;
 }
 
 .skills-title:hover,
 .info-title:hover {
-  text-shadow: 0 0 5px #00e5ff, 0 0 10px #00e5ff, 0 0 15px #00e5ff;
-  color: #00e5ff;
+  text-shadow: 0 0 5px #facc15, 0 0 10px #facc15, 0 0 15px #f472b6;
 }
 
 .skills-tags {
@@ -101,21 +135,22 @@
 }
 
 .skill-tag {
-  background-color: rgba(0, 0, 0, 0.3);
-  color: #00e5ff;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fde68a;
   padding: 0.35rem 0.85rem;
   border-radius: 9999px;
   font-size: 0.85rem;
-  border: 1px solid #00e5ff;
-  text-shadow: 0 0 6px #00e5ff;
-  box-shadow: 0 0 12px #00e5ff55;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 6px rgba(253, 230, 138, 0.5);
+  box-shadow: 0 0 12px rgba(253, 230, 138, 0.3);
   transition: all 0.3s ease-in-out;
 }
 
 .skill-tag:hover {
-  background-color: rgba(0, 229, 255, 0.15);
-  box-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff, 0 0 30px #00e5ff;
+  background-color: rgba(253, 230, 138, 0.2);
   transform: scale(1.1) rotate(1deg);
+  box-shadow: 0 0 10px rgba(253, 230, 138, 0.5),
+    0 0 20px rgba(253, 230, 138, 0.3);
   color: #ffffff;
 }
 
@@ -135,32 +170,15 @@
 .info-list {
   list-style-type: disc;
   padding-left: 1rem;
-  color: #d1d5db;
+  color: #fef3c7;
 }
 
 .info-text {
-  color: #d1d5db;
+  color: #fef3c7;
 }
 
 .fade-in {
   opacity: 0;
   transform: translateY(60px);
   will-change: opacity, transform;
-}
-
-.lottie-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.12;
-}
-
-.lottie-background canvas {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover;
 }
