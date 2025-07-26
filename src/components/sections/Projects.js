@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Tilt from "react-parallax-tilt";
 import Lottie from "lottie-react";
-import codingAnimation from "../../assets/projects.json";
+import leatherAnimation from "../../assets/projects.json"; // Replace with your Lottie background
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,7 +12,7 @@ export const Projects = () => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    const cards = sectionRef.current.querySelectorAll(".project-card");
+    const cards = sectionRef.current.querySelectorAll(".product-card");
 
     gsap.fromTo(
       cards,
@@ -37,75 +37,56 @@ export const Projects = () => {
     );
   }, []);
 
-  const projectData = [
+  const productData = [
     {
-      title: "Cryptocurrency Finance Price Tracker Web App",
+      title: "Ladies Handbags",
       description:
-        "Developed a dynamic cryptocurrency tracker in React.js with live price updates and search functionality, providing real-time market data on page load.",
-      tech: ["React.js", "JavaScript", "ECMAScript 6", "CSS"],
-      link: "https://crypto-react-js.vercel.app/",
+        "Elegant leather and non-leather handbags combining fashion and utility, perfect for every occasion.",
+      material: ["Genuine Leather", "PU Leather", "Canvas", "Vegan Leather"],
     },
     {
-      title: "E-Commerce Cart",
+      title: "Gents Bags",
       description:
-        "Developed an advanced e-commerce cart using React.js and Redux with seamless add/remove functionality and robust cart management for enhanced user experience.",
-      tech: ["React.js", "Redux.js", "ECMAScript 6", "JavaScript", "CSS"],
-      link: "https://ecomm-addtocart-react-redux.vercel.app/",
+        "Premium office and travel bags designed with class, space, and strength for the modern man.",
+      material: ["Leather", "Rexine", "PU", "Canvas"],
     },
     {
-      title: "CRUD Operation Application",
+      title: "Wallets",
       description:
-        "Developed a full-stack CRUD application using React.js, Node.js, Express.js, and MongoDB, with RESTful APIs for seamless data management and dynamic user interaction.",
-      tech: [
-        "React.js",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "ECMAScript 6",
-        "JavaScript",
-      ],
-      link: "https://github.com/ani1999deep/mern_stack_projects/tree/main/crud%20operation",
+        "Sleek and stylish wallets in various colors and textures for both men and women.",
+      material: ["Leather", "Synthetic", "Vegan Options"],
     },
     {
-      title: "Pokemon Explorer Web App",
+      title: "Belts",
       description:
-        "A responsive and visually appealing React.js web app for exploring Pokemons using the PokeAPI. It includes a homepage with search functionality and a detailed view for each Pokemon.",
-      tech: ["React.js", "JavaScript", "ECMAScript 6", "CSS"],
-      link: "https://pokemon-git-d42cb1-anideepbhowmick1999creatorgmailcoms-projects.vercel.app/",
+        "Durable, classy belts crafted from quality leather and synthetic alternatives.",
+      material: ["Full-Grain Leather", "PU Leather", "Faux Leather"],
     },
   ];
 
   return (
-    <section id="projects" className="projects-section" ref={sectionRef}>
-      {/* Lottie Background */}
+    <section id="products" className="products-section" ref={sectionRef}>
       <div className="lottie-bg">
-        <Lottie animationData={codingAnimation} loop={true} />
+        <Lottie animationData={leatherAnimation} loop={true} />
       </div>
 
-      {/* Foreground content */}
-      <div className="projects-container">
-        <h2 className="projects-title">✨ Featured Projects</h2>
-        <div className="projects-grid">
-          {projectData.map((project, index) => (
+      <div className="products-container">
+        <h2 className="products-title">
+          👜 Our Leather & Non-Leather Collection
+        </h2>
+        <div className="products-grid">
+          {productData.map((product, index) => (
             <Tilt tiltMaxAngleX={15} tiltMaxAngleY={15} key={index}>
-              <div className="project-card">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-desc">{project.description}</p>
-                <div className="project-tech">
-                  {project.tech.map((tech, idx) => (
-                    <span key={idx} className="tech-badge">
-                      {tech}
+              <div className="product-card">
+                <h3 className="product-title">{product.title}</h3>
+                <p className="product-desc">{product.description}</p>
+                <div className="product-materials">
+                  {product.material.map((mat, idx) => (
+                    <span key={idx} className="material-badge">
+                      {mat}
                     </span>
                   ))}
                 </div>
-                <a
-                  href={project.link}
-                  className="project-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  View Project →
-                </a>
               </div>
             </Tilt>
           ))}

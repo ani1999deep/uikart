@@ -51,7 +51,6 @@ export const About = () => {
     <section id="about" className="about-section" ref={sectionRef}>
       <Starfield />
 
-      {/* Lottie Background */}
       <div className="lottie-background">
         <Lottie animationData={aboutAnimation} loop={true} />
       </div>
@@ -125,18 +124,19 @@ export const About = () => {
             <h3 className="info-title">🏢 Our Journey</h3>
             <ul className="info-list">
               <li>
-                <strong>Founded in 2022</strong> — UI Kart began as a local
-                workshop producing handcrafted leather bags in Kolkata.
+                <strong>Established on 5th May 2025</strong>, UI Kart started as
+                a small workshop crafting premium leather bags in the heart of
+                Kolkata.
               </li>
               <li>
-                By 2024, we expanded into <strong>pan-India retail</strong>,
-                launched our
-                <strong> e-commerce store</strong>, and began working with{" "}
-                <strong>corporate gifting clients</strong>.
+                In record time, we expanded across India, launched our{" "}
+                <strong>online storefront</strong>, and became a trusted partner
+                for <strong>corporate gifting and B2B solutions</strong>.
               </li>
               <li>
-                Today, we serve both individual customers and bulk wholesale
-                buyers with world-class quality and service.
+                Today, UI Kart stands as a one-stop destination for high-quality
+                leather and non-leather goods—serving both retail customers and
+                bulk clients with unmatched craftsmanship.
               </li>
             </ul>
           </Tilt>
@@ -144,10 +144,27 @@ export const About = () => {
           <Tilt className="info-card fade-in">
             <h3 className="info-title">🌍 Global Outlook</h3>
             <p className="info-text">
-              With a strong presence in domestic markets, UI Kart now ships to
-              multiple countries and works with private labels for global
-              distribution. We're continuously growing and collaborating with
-              partners worldwide.
+              Backed by a strong domestic presence, UI Kart is now stepping onto
+              the global stage—shipping to multiple countries and partnering
+              with private labels for international distribution. We don't just
+              deliver products—we deliver experiences, built on trust, style,
+              and consistency.
+            </p>
+          </Tilt>
+
+          <Tilt className="info-card fade-in">
+            <h3 className="info-title">🛒 Coming Soon</h3>
+            <p className="info-text">
+              We’re excited to announce that our official{" "}
+              <strong>e-commerce website</strong> is launching very soon!
+              <br />
+              <br />
+              Get ready to explore our premium collection of handcrafted leather
+              and non-leather goods—crafted with passion, delivered with care.
+              UI Kart is bringing timeless elegance right to your doorstep.
+              <br />
+              <br />
+              <em>Stay tuned for a seamless shopping experience!</em>
             </p>
           </Tilt>
         </div>

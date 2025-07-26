@@ -2,7 +2,14 @@ import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import emailjs from "@emailjs/browser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faWhatsapp,
+  faFacebook,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+import Lottie from "lottie-react";
+import contactAnimation from "../../assets/Contact.json"; // ✅ your Lottie animation
 import "../../css/Contact.css";
 import Swal from "sweetalert2";
 
@@ -48,6 +55,11 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="contact-section">
+      {/* 🌟 Background Lottie Animation */}
+      <div className="contact-lottie-bg">
+        <Lottie animationData={contactAnimation} loop autoplay />
+      </div>
+
       <RevealOnScroll>
         <div className="contact-container">
           <h2 className="contact-heading">Get In Touch</h2>
@@ -105,20 +117,36 @@ export const Contact = () => {
           {/* Social Icons */}
           <div className="social-links">
             <a
-              href="https://github.com/ani1999deep"
+              href="mailto:uikartoffical@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon-link"
             >
-              <FontAwesomeIcon icon={faGithub} className="social-icon" />
+              <FontAwesomeIcon icon={faEnvelope} className="social-icon" />
             </a>
             <a
-              href="https://www.linkedin.com/in/anideepofficial/"
+              href="https://wa.me/918777647596"
               target="_blank"
               rel="noopener noreferrer"
               className="social-icon-link"
             >
-              <FontAwesomeIcon icon={faLinkedin} className="social-icon" />
+              <FontAwesomeIcon icon={faWhatsapp} className="social-icon" />
+            </a>
+            <a
+              href="https://www.facebook.com/share/1JJAtNCPkA/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon-link"
+            >
+              <FontAwesomeIcon icon={faFacebook} className="social-icon" />
+            </a>
+            <a
+              href="https://www.instagram.com/uikartoffical?igsh=b2FjemV2aWI3NnM3"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-icon-link"
+            >
+              <FontAwesomeIcon icon={faInstagram} className="social-icon" />
             </a>
           </div>
         </div>

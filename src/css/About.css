@@ -36,22 +36,31 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.about-title:hover {
+  text-shadow: 0 0 5px #22d3ee, 0 0 10px #22d3ee, 0 0 15px #22d3ee;
 }
 
 .about-card,
-.info-card {
+.info-card,
+.skills-section {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   padding: 2rem;
   border-radius: 1rem;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 .about-card:hover,
-.info-card:hover {
-  transform: translateY(-0.25rem);
+.info-card:hover,
+.skills-section:hover {
+  transform: translateY(-0.25rem) scale(1.02);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), 0 0 40px rgba(0, 229, 255, 0.2);
+  border: 1px solid rgba(0, 229, 255, 0.6);
 }
 
 .about-description {
@@ -71,20 +80,18 @@
   }
 }
 
-.skills-section {
-  padding: 1.5rem;
-  border-radius: 1rem;
-  transition: transform 0.3s ease;
-}
-
-.skills-section:hover {
-  transform: translateY(-0.25rem);
-}
-
-.skills-title {
+.skills-title,
+.info-title {
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.skills-title:hover,
+.info-title:hover {
+  text-shadow: 0 0 5px #00e5ff, 0 0 10px #00e5ff, 0 0 15px #00e5ff;
+  color: #00e5ff;
 }
 
 .skills-tags {
@@ -102,13 +109,14 @@
   border: 1px solid #00e5ff;
   text-shadow: 0 0 6px #00e5ff;
   box-shadow: 0 0 12px #00e5ff55;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 .skill-tag:hover {
-  background-color: rgba(0, 229, 255, 0.1);
-  box-shadow: 0 0 20px #00e5ffaa;
-  transform: scale(1.1) rotate(2deg);
+  background-color: rgba(0, 229, 255, 0.15);
+  box-shadow: 0 0 10px #00e5ff, 0 0 20px #00e5ff, 0 0 30px #00e5ff;
+  transform: scale(1.1) rotate(1deg);
+  color: #ffffff;
 }
 
 .info-grid {
@@ -124,12 +132,6 @@
   }
 }
 
-.info-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
 .info-list {
   list-style-type: disc;
   padding-left: 1rem;
@@ -138,24 +140,6 @@
 
 .info-text {
   color: #d1d5db;
-}
-
-.info-role {
-  font-weight: 600;
-}
-
-.lottie-wrapper {
-  max-width: 400px;
-  margin: 0 auto 2rem;
-}
-
-.zoom-on-scroll {
-  transform: scale(1);
-  transition: transform 8s ease-in-out;
-}
-
-.about-section:hover .zoom-on-scroll {
-  transform: scale(1.05);
 }
 
 .fade-in {
